@@ -1,10 +1,6 @@
-import React from 'react'
-import Nutribullet from '../assets/Nutribullet.png'
+import Image from '../assets/Blendify.png'
 import { useEffect,useState } from 'react';
-import Search from '../assets/glass.png'
-import ShopBag from '../assets/Shop-Bag.png'
-import Menu from '../assets/menu.png'
-import Cancel from '../assets/cancel.png'
+import {X,menu,cart,search} from 'lucide-react'
 
 function Nav() {
     const [scroll, setScroll] = useState(false);
@@ -40,7 +36,7 @@ function Nav() {
     <div className={`max-[640px]:hidden fixed z-10 flex justify-center items-center h-16  w-full ${ scroll ? `bg-lightgray` : `bg-transparent`} `}>
     <div className=' flex justify-center px-6 '>
         <figure>
-            <img className={`w-64 ${scroll ? 'invert' : 'invert-0' }`} src={Nutribullet} alt="" />
+            <img className={`w-64 ${scroll ? 'invert' : 'invert-0' }`} src={Image} alt="" />
         </figure>
     </div>
     <div className='w-full flex justify-center ' >
@@ -52,28 +48,28 @@ function Nav() {
         </ul>
     </div>
     <div className=' flex justify-evenly w-48 px-4'>
-        <img src={Search} className={` w-6 cursor-pointer ${scroll ? 'invert' : 'invert-0'}`} alt="" />
-        <img src={ShopBag} className={` w-6 cursor-pointer ${scroll ? 'invert' : 'invert-0'}`} alt="" />
+        <img src={search} className={` w-6 cursor-pointer ${scroll ? 'invert' : 'invert-0'}`} alt="" />
+        <img src={cart} className={` w-6 cursor-pointer ${scroll ? 'invert' : 'invert-0'}`} alt="" />
     </div>
     </div>
     <div className={`max-[640px]:flex hidden fixed z-10 justify-center items-center h-16  w-full px-4 ${ scroll ? `bg-lightgray` : `bg-transparent`}`}>
         <div className=' w-full '>
             <button>
-            <img onClick={OpenMenu} className={`${scroll ? 'invert' : 'invert-0' } w-8`} src={Menu} alt="" />
+            <img onClick={OpenMenu} className={`${scroll ? 'invert' : 'invert-0' } w-8`} src={menu} alt="" />
             </button>
         </div>
         <div className='w-full'>
-            <img className={`${scroll ? 'invert' : 'invert-0' } w-32`} src={Nutribullet} alt="" />
+            <img className={`${scroll ? 'invert' : 'invert-0' } w-32`} src={Image} alt="" />
         </div>
         <div className='flex justify-end pl-4 w-full '>
-            <img className={`${scroll ? 'invert' : 'invert-0' }  w-6 mx-4`} src={Search} alt="" />
-            <img className={`${scroll ? 'invert' : 'invert-0' }  w-6 `} src={ShopBag} alt="" />
+            <img className={`${scroll ? 'invert' : 'invert-0' }  w-6 mx-4`} src={search} alt="" />
+            <img className={`${scroll ? 'invert' : 'invert-0' }  w-6 `} src={cart} alt="" />
         </div>
     </div>
     <div className={`${Click ? 'left-0' : '-left-80'} duration-500 w-80 h-screen bg-lightgrayer z-20 fixed p-4`}>
         <div>
             <button onClick={CloseMenu}>
-            <img className='w-6' src={Cancel} alt="" />
+            <img className='w-6' src={X} alt="" />
             </button>
         </div>
         <div className=' flex justify-start p-10'>
